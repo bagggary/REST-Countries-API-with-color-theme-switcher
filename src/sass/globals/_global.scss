@@ -1,4 +1,6 @@
 @use "../util/colors" as *;
 body {
   font-family: "Nunito Sans", sans-serif;
+  background-image: url("/src/assets/design/desktop-design-home-light.jpg");
+  min-height: 100vh;
 }

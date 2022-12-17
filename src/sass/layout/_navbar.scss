@@ -1,10 +1,11 @@
 @use "../util/index2" as *;
 
 header {
-  background-color: red;
+  background-color: hsl(0, 0%, 98%);
+  box-shadow: rgb(0 0 0 / 45%) 0px 18px 11px -20px;
   padding: 24px 0;
   @include breakpoint("medium") {
-    padding: 32px 0;
+    padding: 26px 0;
   }
   nav {
     display: flex;
@@ -12,6 +13,9 @@ header {
     h1 {
       font-size: 14px;
       margin-bottom: 0;
+      @include breakpoint("medium") {
+        font-size: 24px;
+      }
     }
     .theme {
       align-self: center;
@@ -24,6 +28,9 @@ header {
       div {
         font-size: 14px;
         font-weight: 600;
+        @include breakpoint(medium) {
+          font-size: 16px;
+        }
       }
     }
   }

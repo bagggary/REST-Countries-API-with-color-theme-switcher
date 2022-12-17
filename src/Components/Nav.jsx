@@ -7,10 +7,10 @@ export default function Nav() {
   <header>
     <div className='container'>
         <nav>
-            <h1>Where is the world?</h1>
+            <h1>Where in the world?</h1>
             <div className='theme'>
                 <img src={light} alt="themeIcon" />
-                <div> light mode </div>
+                <div>Dark Mode</div>
             </div>
 
        </nav>

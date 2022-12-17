@@ -1,0 +1,21 @@
+@use "../util/index2" as *;
+.country {
+  opacity: 0.6;
+  width: 264px;
+  margin-left: 80px;
+  margin-top: 47px;
+  height: 336px;
+  border-radius: 5px;
+  background-color: red;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 160px;
+  }
+  .country-details {
+    padding: 22px 0 0 24px;
+    h1 {
+      font-size: 18px;
+    }
+  }
+}
