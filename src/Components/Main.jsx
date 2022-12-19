@@ -28,7 +28,12 @@ export default function Main(props) {
                     })}
                 </div> }
             </div>
+        </div>
 
+        <div className="container">
+        <div className="countires-container">
+              {props.children}
+            </div>
         </div>
 
     </main>

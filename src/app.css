@@ -270,17 +270,17 @@ a:active {
 
 body {
   font-family: "Nunito Sans", sans-serif;
-  background-image: url("/src/assets/design/desktop-design-home-light.jpg");
   min-height: 100vh;
 }
 
 .container {
+  opacity: 0.6;
   width: 91.2%;
   margin-inline: auto;
 }
 @media (min-width: 43.75em) {
   .container {
-    max-width: 88.75%;
+    max-width: calc(100% - 130px);
   }
 }
 
@@ -397,22 +397,44 @@ main .container .filter-search i {
 }
 
 .country {
-  opacity: 0.6;
   width: 264px;
-  margin-left: 80px;
-  margin-top: 47px;
   height: 336px;
   border-radius: 5px;
-  background-color: red;
+  background-color: white;
   overflow: hidden;
+  box-shadow: 0px 5px 11px 4px rgba(0, 0, 0, 0.05);
 }
-.country img {
+.country .img {
   width: 100%;
   height: 160px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .country .country-details {
   padding: 22px 0 0 24px;
 }
 .country .country-details h1 {
   font-size: 18px;
+}
+.country .country-details .info {
+  margin-top: 17px;
+}
+.country .country-details .info > div {
+  font-size: 14px;
+  font-weight: 600;
+}
+.country .country-details .info > div:not(.country .country-details .info > div:first-child) {
+  margin-top: 5px;
+}
+.country .country-details .info > div span {
+  font-weight: 300;
+}
+
+.countires-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(265px, 1fr));
+  justify-items: center;
+  gap: 73px;
+  margin-top: 46px;
 }/*# sourceMappingURL=app.css.map */

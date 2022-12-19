@@ -14,12 +14,28 @@ function App() {
     .then(response => response.json())
     .then(data => setCountryData(data))
   }, [])
-  console.log(countryData[40])
     return (
     <div>
       <Nav/>
-      <Main filter = {filterRegion} setFilter = {setFilterRegion}/>
-      <Country image = { countryData[40].flags.png} name = {countryData[40].name.common} pop = {countryData[40].population} reg = {countryData[40].region} cap ={countryData[40].capital[0]}/>
+      <Main filter = {filterRegion} setFilter = {setFilterRegion}>
+          {countryData && countryData.map((coun , index) => {
+            return <Country image = { coun.flags.svg} 
+            name = {coun.name.common} 
+            pop = {coun.population} 
+            reg = {coun.region} 
+            cap ={coun.capital}
+            key = {index}
+            id = {index}
+            />
+          })}
+
+
+      </Main>
+      {/* <Country image = { countryData[40].flags.svg} 
+      name = {countryData[40].name.common} 
+      pop = {countryData[40].population} 
+      reg = {countryData[40].region} 
+      cap ={countryData[40].capital[0]}/> */}
     </div>
   )
 }
