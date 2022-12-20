@@ -1,10 +1,9 @@
 @use "../util/index2" as *;
 
 .container {
-  opacity: 0.6;
   width: 91.2%;
   margin-inline: auto;
   @include breakpoint("medium") {
-    max-width: calc(100% - 130px);
+    max-width: calc(100% - 160px);
   }
 }

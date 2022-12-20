@@ -1,24 +1,23 @@
 import React , { useState } from "react"
 
-export default function Main(props) {
+export default function Main({filterSearch , filter , setFilter , children}) {
     const [active , setActive]  = useState(false)
-    const  continents = ['Africa' , 'America', 'Asia' , 'Europe' , 'Oceania']
+    const  continents = ['Africa' , 'Americas', 'Asia' , 'Europe' , 'Oceania']
 
     function filterSelector(e){
-        props.setFilter(e.target.textContent)
+        setFilter(e.target.textContent)
         setActive(false)
     }
-    console.log(props.filter)
   return (
     <main>
         <div className='container'>
             <div className='filter-search'>
-                <input type="text" placeholder="Search for a country..." />
+                <input type="text" placeholder="Search for a country..." onChange={(e) => filterSearch(e.target.value)} />
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
             <div className='dropdown'>
                 <div className='dropdown-btn' onClick={() => setActive(!active)}>
-                {props.filter === '' ? 'Filter by Region' : props.filter}
+                {filter === '' ? 'Filter by Region' : filter}
                 <span> <i className="fa-solid fa-caret-down"></i> </span>
                 </div>
                 {active &&  
@@ -32,7 +31,7 @@ export default function Main(props) {
 
         <div className="container">
         <div className="countires-container">
-              {props.children}
+              {children}
             </div>
         </div>
 

@@ -7,7 +7,7 @@ import Nav from './Components/Nav'
 function App() {
   const [filterRegion , setFilterRegion] = useState('')
   const [countryData , setCountryData] = useState([])
-
+  const [ search , setSearch ]= useState('')
 
   useEffect(()=>{
     fetch("https://restcountries.com/v3.1/all")
@@ -16,9 +16,13 @@ function App() {
   }, [])
     return (
     <div>
-      <Nav/>
-      <Main filter = {filterRegion} setFilter = {setFilterRegion}>
-          {countryData && countryData.map((coun , index) => {
+      <Nav />
+      <Main filterSearch = {setSearch} filter = {filterRegion} setFilter = {setFilterRegion}>
+          {countryData.filter((cont) => {
+            return filterRegion.toLowerCase() === "" ? cont : cont.region.includes(filterRegion)
+          }).filter((filt) => {
+            return search.toLowerCase() === '' ? filt : filt.name.common.toLowerCase().includes(search)
+          }).map((coun , index) => {
             return <Country image = { coun.flags.svg} 
             name = {coun.name.common} 
             pop = {coun.population} 

@@ -12,7 +12,6 @@ export default function Nav() {
                 <img src={light} alt="themeIcon" />
                 <div>Dark Mode</div>
             </div>
-
        </nav>
     </div>
   </header>
