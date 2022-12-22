@@ -1,0 +1,26 @@
+@use "../util/index2" as *;
+
+.details {
+  margin-top: 80px;
+  .back-btn {
+    background-color: hsl(0, 0%, 98%);
+    box-shadow: rgb(0 0 0 / 12%) 0px 1px 12px 3px;
+    width: 136px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 13px 40px 15px 33px;
+    cursor: pointer;
+    i {
+      margin-right: 12px;
+    }
+  }
+  .info-deatils {
+    margin-top: 80px;
+    .details-image {
+      img {
+        height: 400px;
+        width: 560px;
+      }
+    }
+  }
+}

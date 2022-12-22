@@ -448,4 +448,27 @@ main .container .filter-search i {
   .countires-container {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+.details {
+  margin-top: 80px;
+}
+.details .back-btn {
+  background-color: hsl(0deg, 0%, 98%);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 12px 3px;
+  width: 136px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 13px 40px 15px 33px;
+  cursor: pointer;
+}
+.details .back-btn i {
+  margin-right: 12px;
+}
+.details .info-deatils {
+  margin-top: 80px;
+}
+.details .info-deatils .details-image img {
+  height: 400px;
+  width: 560px;
 }/*# sourceMappingURL=app.css.map */
