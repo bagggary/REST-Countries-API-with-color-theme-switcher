@@ -26,6 +26,9 @@ export default function CountryDetail({data}) {
               <div>Sub Region:<span>{detailData.subregion}</span></div>
               <div>Capital:<span>{detailData.capital}</span></div>
             </div>
+            <div className='col-2'>
+            <div>Top Level Domain:<span></span></div>
+            </div>
           </div>
           
         </div>
