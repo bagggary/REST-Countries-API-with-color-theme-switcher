@@ -16,10 +16,56 @@
   }
   .info-deatils {
     margin-top: 80px;
+    display: flex;
+    gap: 120px;
     .details-image {
       img {
         height: 400px;
         width: 560px;
+      }
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 48px 0;
+      .country-info {
+        display: flex;
+        gap: 120px;
+        .col-1,
+        .col-2 {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          > div {
+            font-weight: 600;
+            font-size: 14px;
+            > span {
+              font-weight: 300 !important;
+            }
+          }
+        }
+      }
+    }
+    .borders {
+      display: flex;
+      gap: 14px;
+      margin-top: 75px;
+      .borders-title {
+        align-self: center;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .borders-countries {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        .border {
+          background-color: white;
+          padding: 10px 28px;
+          box-shadow: rgb(0 0 0 / 12%) 0px 1px 12px 3px;
+          border-radius: 5px;
+        }
       }
     }
   }

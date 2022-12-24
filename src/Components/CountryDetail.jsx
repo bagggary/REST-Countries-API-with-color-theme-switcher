@@ -6,6 +6,7 @@ export default function CountryDetail({data}) {
        return count.ccn3 === countryId
     })
 
+    console.log(detailData.borders)
   return (
     <div className='details container'>
       <div className="back-btn">
@@ -20,14 +21,25 @@ export default function CountryDetail({data}) {
           <h1>{detailData.name.common}</h1>
           <div className='country-info'>
             <div className='col-1'>
-              <div>Native Name:<span>{detailData.name.nativeName.spa.official}</span></div>
-              <div>Population:<span>{detailData.population}</span></div>
-              <div>Region:<span>{detailData.region}</span></div>
-              <div>Sub Region:<span>{detailData.subregion}</span></div>
-              <div>Capital:<span>{detailData.capital}</span></div>
+              <div>Native Name: <span>{detailData.name.official|| 'it doesnt have any official name'}</span></div>
+              <div>Population: <span>{(detailData.population).toLocaleString("en-US")}</span></div>
+              <div>Region: <span>{detailData.region}</span></div>
+              <div>Sub Region: <span>{detailData.subregion}</span></div>
+              <div>Capital: <span>{detailData.capital}</span></div>
             </div>
             <div className='col-2'>
-            <div>Top Level Domain:<span></span></div>
+            <div>Top Level Domain: <span>{detailData.tld}</span></div>
+            <div>currencies: <span>{Object.values(detailData.currencies)[0].name || 'no currencies'}</span></div>
+            <div>languages: <span>{Object.values(detailData.languages).join(',')}</span></div>
+            </div>
+          </div>
+
+          <div className="borders">
+            <div className='borders-title'>Border Countries :</div>
+            <div className='borders-countries'>
+              {detailData.borders &&  detailData.borders.map((bord , index)=>{
+                return <div key={index} className='border'>{bord}</div>
+              }) || 'no border countries'}
             </div>
           </div>
           
