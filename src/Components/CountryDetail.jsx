@@ -1,5 +1,8 @@
 import React from 'react'
 import{useParams} from 'react-router-dom'
+import {Link } from "react-router-dom"
+import '../app.css';
+import { UserContextConsumer } from '../ThemeContext';
 export default function CountryDetail({data}) {
     const {countryId} = useParams()
    const detailData  = data && data.find((count) => {
@@ -8,11 +11,15 @@ export default function CountryDetail({data}) {
 
     console.log(detailData.borders)
   return (
-    <div className='details container'>
-      <div className="back-btn">
+    <UserContextConsumer>
+{({theme}) => (
+    <div className={`details container ${theme === 'light' ? '' : "dark-details"}`}>
+     <Link to = '/' style={{textDecoration:'none'}}>
+       <div className="back-btn">
       <i class="fa-solid fa-arrow-left"></i>
       Back
       </div>
+      </Link >  
       <div className="info-deatils">
         <div className='details-image'>
           <img src={detailData.flags.svg} alt="" />
@@ -33,13 +40,12 @@ export default function CountryDetail({data}) {
             <div>languages: <span>{Object.values(detailData.languages).join(',')}</span></div>
             </div>
           </div>
-
           <div className="borders">
             <div className='borders-title'>Border Countries :</div>
             <div className='borders-countries'>
               {detailData.borders &&  detailData.borders.map((bord , index)=>{
-                return <div key={index} className='border'>{bord}</div>
-              }) || 'no border countries'}
+                return <div key={index} className={theme === 'light' ? 'border' : "dark-border"}>{bord}</div>
+              }) || <h4>No Border Countries</h4>}
             </div>
           </div>
           
@@ -47,10 +53,11 @@ export default function CountryDetail({data}) {
       </div>
         {/* <img src={detailData.flags.svg} alt="" />
         <div className="detail-name">
-            deatila page [name that exist in the country page and then access throught the final approach]
+        deatila page [name that exist in the country page and then access throught the final approach]
         </div>
-        <div className="detail-border"></div> */}
+      <div className="detail-border"></div> */}
     </div>
-
+)}
+      </UserContextConsumer>
   )
 }

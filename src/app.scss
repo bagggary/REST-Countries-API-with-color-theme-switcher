@@ -5,3 +5,14 @@
 @use "./sass/layout/filter";
 @use "./sass/layout/country";
 @use "./sass/layout/details";
+a:-webkit-any-link {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.dark-theme {
+  background-color: hsl(207, 26%, 17%);
+}
+#root {
+  min-height: 100vh;
+}

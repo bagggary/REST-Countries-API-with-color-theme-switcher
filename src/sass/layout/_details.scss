@@ -70,3 +70,36 @@
     }
   }
 }
+a {
+  text-decoration: none;
+}
+.dark-details {
+  .back-btn {
+    background-color: hsl(209, 23%, 22%);
+    color: hsl(0, 0%, 98%);
+  }
+  .col-1,
+  .col-2 {
+    color: hsl(0, 0%, 98%);
+  }
+  .info {
+    h1 {
+      color: hsl(0, 0%, 98%);
+    }
+  }
+  .borders-title {
+    color: hsl(0, 0%, 98%);
+  }
+  .borders-countries {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    .dark-border {
+      background-color: hsl(209, 23%, 22%);
+      padding: 10px 28px;
+      box-shadow: rgb(0 0 0 / 12%) 0px 1px 12px 3px;
+      border-radius: 5px;
+      color: hsl(0, 0%, 98%);
+    }
+  }
+}

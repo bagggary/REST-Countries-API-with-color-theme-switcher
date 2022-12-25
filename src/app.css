@@ -307,13 +307,15 @@ header nav h1 {
   }
 }
 header nav .theme {
+  cursor: pointer;
   align-self: center;
   display: flex;
   justify-content: space-between;
 }
-header nav .theme img {
+header nav .theme i {
   height: 17px;
   margin-right: 10px;
+  font-size: 20px;
 }
 header nav .theme div {
   font-size: 14px;
@@ -323,6 +325,16 @@ header nav .theme div {
   header nav .theme div {
     font-size: 16px;
   }
+}
+
+.header-dark {
+  background-color: hsl(209deg, 23%, 22%);
+}
+.header-dark nav h1 {
+  color: hsl(0deg, 0%, 98%);
+}
+.header-dark nav .theme {
+  color: hsl(0deg, 0%, 98%);
 }
 
 main {
@@ -395,6 +407,25 @@ main .container .filter-search i {
   background: #f4f4f4;
 }
 
+.dark-main input[type=text] {
+  background-color: hsl(209deg, 23%, 22%);
+  color: hsl(0deg, 0%, 98%);
+}
+.dark-main input[type=text]::placeholder {
+  color: hsl(0deg, 0%, 98%);
+}
+.dark-main .dropdown-btn {
+  background-color: hsl(209deg, 23%, 22%);
+  color: hsl(0deg, 0%, 98%);
+}
+.dark-main .dropdown-content {
+  background-color: hsl(209deg, 23%, 22%);
+  color: hsl(0deg, 0%, 98%);
+}
+.dark-main .dropdown-content .dropdown-names:hover {
+  background-color: rgb(199, 195, 195);
+}
+
 .country {
   width: 264px;
   height: 336px;
@@ -402,7 +433,6 @@ main .container .filter-search i {
   background-color: white;
   overflow: hidden;
   box-shadow: 0px 5px 11px 4px rgba(0, 0, 0, 0.05);
-  transition: all 2s ease-in-out;
 }
 .country .img {
   width: 100%;
@@ -448,6 +478,11 @@ main .container .filter-search i {
   .countires-container {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+.dark-country {
+  background-color: hsl(209deg, 23%, 22%);
+  color: hsl(0deg, 0%, 100%);
 }
 
 .details {
@@ -519,4 +554,49 @@ main .container .filter-search i {
   padding: 10px 28px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 12px 3px;
   border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dark-details .back-btn {
+  background-color: hsl(209deg, 23%, 22%);
+  color: hsl(0deg, 0%, 98%);
+}
+.dark-details .col-1,
+.dark-details .col-2 {
+  color: hsl(0deg, 0%, 98%);
+}
+.dark-details .info h1 {
+  color: hsl(0deg, 0%, 98%);
+}
+.dark-details .borders-title {
+  color: hsl(0deg, 0%, 98%);
+}
+.dark-details .borders-countries {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.dark-details .borders-countries .dark-border {
+  background-color: hsl(209deg, 23%, 22%);
+  padding: 10px 28px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 12px 3px;
+  border-radius: 5px;
+  color: hsl(0deg, 0%, 98%);
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.dark-theme {
+  background-color: hsl(207deg, 26%, 17%);
+}
+
+#root {
+  min-height: 100vh;
 }/*# sourceMappingURL=app.css.map */

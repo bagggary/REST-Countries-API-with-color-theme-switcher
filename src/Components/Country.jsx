@@ -1,8 +1,11 @@
 import React from 'react'
+import {UserContextConsumer} from "../ThemeContext"
 
 export default function Country(props) {
   return (
-    <div className="country">
+    <UserContextConsumer>
+ {({theme}) => (
+    <div className={`country ${theme === 'light' ? '' : 'dark-country'}`}>
         <div className="img" style={{'backgroundImage' : `url(${props.image})`}}></div>
         <div className="country-details">
             <h1>{props.name}</h1>
@@ -13,5 +16,7 @@ export default function Country(props) {
             </div>
         </div>
     </div>
+ )}
+    </UserContextConsumer>
   )
 }

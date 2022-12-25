@@ -1,4 +1,5 @@
 import React , { useState } from "react"
+import { UserContextConsumer } from "../ThemeContext"
 
 export default function Main({filterSearch , filter , setFilter , children}) {
     const [active , setActive]  = useState(false)
@@ -9,7 +10,9 @@ export default function Main({filterSearch , filter , setFilter , children}) {
         setActive(false)
     }
   return (
-    <main>
+      <UserContextConsumer>
+        {({theme, changeTheme}) => (
+    <main className={` ${theme === 'light' ? '' : 'dark-main'}`}>
         <div className='container'>
             <div className='filter-search'>
                 <input type="text" placeholder="Search for a country..." onChange={(e) => filterSearch(e.target.value)} />
@@ -36,5 +39,8 @@ export default function Main({filterSearch , filter , setFilter , children}) {
         </div>
 
     </main>
+        )}
+    </UserContextConsumer>
+
   )
 }

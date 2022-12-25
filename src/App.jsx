@@ -25,7 +25,7 @@ function App() {
           }).filter((filt) => {
             return search.toLowerCase() === '' ? filt : filt.name.common.toLowerCase().includes(search)
           }).map((coun , index) => {
-            return <Link  to={`/${coun.ccn3}`} > <Country image = { coun.flags.svg} 
+            return <Link style={{ textDecoration: 'none' }}   to={`/${coun.ccn3}`} > <Country image = { coun.flags.svg} 
             name = {coun.name.common} 
             pop = {coun.population} 
             reg = {coun.region} 
