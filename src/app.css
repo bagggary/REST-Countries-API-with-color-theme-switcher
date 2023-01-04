@@ -344,17 +344,27 @@ main .container {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 43.746875em) {
+  main .container {
+    flex-direction: column;
+  }
+}
 main .container .filter-search {
   position: relative;
 }
 main .container .filter-search input[type=text] {
-  width: 480px;
+  width: 30rem;
   padding: 20px 0px 20px 72px;
   border-radius: 5px;
   box-shadow: 0px 5px 11px 4px rgba(0, 0, 0, 0.05);
   outline: none;
   border: none;
   font-size: 14px;
+}
+@media (max-width: 43.746875em) {
+  main .container .filter-search input[type=text] {
+    width: 100%;
+  }
 }
 main .container .filter-search input[type=text]::placeholder {
   font-weight: 600;
@@ -371,6 +381,12 @@ main .container .filter-search i {
 .dropdown {
   width: 200px;
   position: relative;
+}
+@media (max-width: 43.746875em) {
+  .dropdown {
+    width: 50%;
+    margin-top: 40px;
+  }
 }
 .dropdown .dropdown-btn {
   padding: 21px 18px 18px 24px;
@@ -434,6 +450,12 @@ main .container .filter-search i {
   overflow: hidden;
   box-shadow: 0px 5px 11px 4px rgba(0, 0, 0, 0.05);
 }
+@media (max-width: 43.746875em) {
+  .country {
+    width: 300px;
+    height: 320px;
+  }
+}
 .country .img {
   width: 100%;
   height: 160px;
@@ -464,19 +486,27 @@ main .container .filter-search i {
 .countires-container {
   display: grid;
   margin-inline: auto;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
   gap: 73px;
   margin-top: 46px;
 }
-@media (max-width: 56.246875em) {
+@media (min-width: 400px) {
+  .countires-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 768px) {
   .countires-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 43.746875em) {
+@media (min-width: 960px) {
   .countires-container {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .countires-container {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -503,11 +533,25 @@ main .container .filter-search i {
 .details .info-deatils {
   margin-top: 80px;
   display: flex;
+  flex-wrap: wrap;
   gap: 120px;
+}
+@media (max-width: 43.746875em) {
+  .details .info-deatils {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 30px;
+  }
 }
 .details .info-deatils .details-image img {
   height: 400px;
   width: 560px;
+}
+@media (max-width: 43.746875em) {
+  .details .info-deatils .details-image img {
+    width: 100%;
+    height: auto;
+  }
 }
 .details .info-deatils .info {
   display: flex;

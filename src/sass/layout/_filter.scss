@@ -5,10 +5,16 @@ main {
   .container {
     display: flex;
     justify-content: space-between;
+    @include breakpoint-down("small") {
+      flex-direction: column;
+    }
     .filter-search {
       position: relative;
       input[type="text"] {
-        width: 480px;
+        @include breakpoint-down("small") {
+          width: 100%;
+        }
+        width: rem(480);
         padding: 20px 0px 20px 72px;
         border-radius: 5px;
         box-shadow: 0px 5px 11px 4px rgb(0 0 0 / 5%);
@@ -34,6 +40,10 @@ main {
 //dropdown menu styles
 .dropdown {
   width: 200px;
+  @include breakpoint-down("small") {
+    width: 50%;
+    margin-top: 40px;
+  }
   position: relative;
   .dropdown-btn {
     padding: 21px 18px 18px 24px;

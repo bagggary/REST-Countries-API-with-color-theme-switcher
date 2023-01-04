@@ -17,11 +17,21 @@
   .info-deatils {
     margin-top: 80px;
     display: flex;
+    flex-wrap: wrap;
     gap: 120px;
+    @include breakpoint-down("small") {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: 30px;
+    }
     .details-image {
       img {
         height: 400px;
         width: 560px;
+        @include breakpoint-down("small") {
+          width: 100%;
+          height: auto;
+        }
       }
     }
     .info {
