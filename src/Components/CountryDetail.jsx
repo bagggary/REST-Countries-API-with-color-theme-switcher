@@ -13,7 +13,7 @@ export default function CountryDetail({data}) {
     <UserContextConsumer>
 {({theme}) => (
     <div className={`details container ${theme === 'light' ? '' : "dark-details"}`}>
-     <Link to = '/' style={{textDecoration:'none'}}>
+     <Link to = '/REST-Countries-API-with-color-theme-switcher/' style={{textDecoration:'none'}}>
        <div className="back-btn">
       <i class="fa-solid fa-arrow-left"></i>
       Back

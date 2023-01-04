@@ -19,7 +19,7 @@ function App() {
     <div>
       <Nav />
       <Routes>
-        <Route exact path='/' element = {  <Main  filterSearch = {setSearch} filter = {filterRegion} setFilter = {setFilterRegion}>
+        <Route exact path='/REST-Countries-API-with-color-theme-switcher/' element = {  <Main  filterSearch = {setSearch} filter = {filterRegion} setFilter = {setFilterRegion}>
           { countryData.filter((cont) => {
             return filterRegion.toLowerCase() === "" ? cont : cont.region.includes(filterRegion)
           }).filter((filt) => {
