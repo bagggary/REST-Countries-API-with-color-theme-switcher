@@ -9,7 +9,6 @@ export default function CountryDetail({data}) {
        return count.ccn3 === countryId
     })
 
-    console.log(detailData.borders)
   return (
     <UserContextConsumer>
 {({theme}) => (
